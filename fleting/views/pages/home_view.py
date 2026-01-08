@@ -12,9 +12,9 @@ class HomeView:
         content = ft.Column(
             controls=[
                 ft.Text("Home Page", size=30, weight=ft.FontWeight.BOLD),
-                ft.Text("Bem-vindo ao Fleting Framework!"),
+                ft.Text("Bienvenido a la página de inicio de Fleting."),
                 ft.Button(
-                    "Ir para Configurações",
+                    "Ir para configuraciones",
                     on_click=lambda e: self.router.navigate("/settings"),
                 ),
             ],

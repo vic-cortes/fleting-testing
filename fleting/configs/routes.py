@@ -27,7 +27,7 @@ def get_routes():
     for route_path, view_path in ROUTE_MAP.items():
 
         def create_view_lambda(path=view_path):
-            # lambda aceita page e router
+            # lambda accepts page and router
             return lambda page, router: load_view(path)(page, router).render()
 
         routes[route_path] = create_view_lambda()
