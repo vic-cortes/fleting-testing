@@ -1,10 +1,11 @@
-
 from pathlib import Path
+
 from core.logger import get_logger
 
 logger = get_logger("CLI.Delete")
 
 BASE = Path.cwd()
+
 
 def handle_delete(args):
     if len(args) < 2:
@@ -33,6 +34,7 @@ def handle_delete(args):
         logger.exception(f"Erro ao deletar {kind}: {name}")
         print(f"Erro ao deletar {kind} {name}")
 
+
 # -----------------
 # delete controller
 # -----------------
@@ -46,6 +48,7 @@ def delete_controller(name: str):
     path.unlink()
     logger.info(f"Controller removido: {path}")
     print(f"Controller removido com sucesso: {name}")
+
 
 # -----------------
 # delete view
@@ -61,6 +64,7 @@ def delete_view(name: str):
     logger.info(f"View removida: {path}")
     print(f"View removida com sucesso: {name}")
 
+
 # -----------------
 # delete model
 # -----------------
@@ -74,6 +78,7 @@ def delete_model(name: str):
     path.unlink()
     logger.info(f"Model removido: {path}")
     print(f"Model removido com sucesso: {name}")
+
 
 # -----------------
 # delete page

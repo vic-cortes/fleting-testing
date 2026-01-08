@@ -1,10 +1,11 @@
-
 from pathlib import Path
+
 from core.logger import get_logger
 
 logger = get_logger("CLI.Create")
 
 BASE = Path.cwd()
+
 
 def handle_create(args):
     if len(args) < 2:
@@ -30,6 +31,7 @@ def handle_create(args):
     except Exception:
         logger.exception(f"Erro ao criar {kind}: {name}")
         print(f"Erro ao criar {kind} {name}")
+
 
 # --------------
 # create controller
@@ -116,6 +118,7 @@ def create_model(name: str):
     logger.info(f"Model criado: {path}")
     print(f"Model criado com sucesso: {name}")
 
+
 # --------------
 # create page
 # --------------
@@ -125,6 +128,7 @@ def create_page(name: str):
     create_model(name)
     create_controller(name)
     create_page_view(name)
+
 
 def create_page_view(name: str):
     path = BASE / "views" / "pages" / f"{name}_view.py"

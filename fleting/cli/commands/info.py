@@ -1,4 +1,3 @@
-
 import platform
 import sys
 from importlib import metadata
@@ -14,11 +13,13 @@ BANNER = r"""
                            |___/
 """
 
+
 def _get_version(pkg_name: str):
     try:
         return metadata.version(pkg_name)
     except metadata.PackageNotFoundError:
         return "não instalado"
+
 
 def handle_info():
     python_version = sys.version.split()[0]
@@ -28,23 +29,20 @@ def handle_info():
     fleting_version = _get_version("fleting")
 
     print(BANNER)
-    print("🚀 Fleting Framework
-")
+    print("🚀 Fleting Framework")
 
-    print("📦 Ambiente
-")
+    print("📦 Ambiente")
     print(f"🧠 Python        : {python_version}")
     print(f"🖥️  Sistema      : {system}")
     print(f"🧩 Flet          : {flet_version}")
     print(f"🚀 Fleting       : {fleting_version}")
 
-    print("
-📚 Bibliotecas instaladas:")
-    for dist in sorted(metadata.distributions(), key=lambda d: d.metadata["Name"].lower()):
+    print("📚 Bibliotecas instaladas:")
+    for dist in sorted(
+        metadata.distributions(), key=lambda d: d.metadata["Name"].lower()
+    ):
         name = dist.metadata["Name"]
         version = dist.version
         print(f"  - {name}=={version}")
 
-    print("
-✅ Ambiente pronto para uso.
-")
+    print("✅ Ambiente pronto para uso.")

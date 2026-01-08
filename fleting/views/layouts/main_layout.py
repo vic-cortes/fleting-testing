@@ -1,7 +1,7 @@
-
 import flet as ft
-from core.state import AppState
 from core.i18n import I18n
+from core.state import AppState
+
 
 class MainLayout(ft.Column):
     def __init__(self, page, content, router):

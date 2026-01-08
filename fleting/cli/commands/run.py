@@ -1,8 +1,8 @@
-
+import shutil
 import subprocess
 import sys
-import shutil
 from pathlib import Path
+
 
 def handle_run():
     project_root = Path.cwd()
@@ -18,13 +18,9 @@ def handle_run():
         print("👉 Execute 'fleting init' primeiro.")
         return
 
-    print("🚀 Iniciando aplicação Fleting...
-")
+    print("🚀 Iniciando aplicação Fleting...")
 
     try:
-        subprocess.run(
-            ["flet", "run", str(app_path)],
-            check=True
-        )
+        subprocess.run(["flet", "run", str(app_path)], check=True)
     except subprocess.CalledProcessError:
         print("❌ Erro ao executar o app com Flet")

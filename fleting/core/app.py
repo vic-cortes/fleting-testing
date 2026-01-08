@@ -1,7 +1,7 @@
-
 import flet as ft
 from core.responsive import get_device_type
 from core.state import AppState
+
 
 class FletingApp:
     def __init__(self, page):

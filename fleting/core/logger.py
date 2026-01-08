@@ -1,4 +1,3 @@
-
 import logging
 from pathlib import Path
 
@@ -15,6 +14,7 @@ logging.basicConfig(
         logging.StreamHandler(),
     ],
 )
+
 
 def get_logger(name: str):
     return logging.getLogger(name)
