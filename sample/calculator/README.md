@@ -1,4 +1,4 @@
-# FletingTesting app
+# Calculator app
 
 ## Run the app
 
