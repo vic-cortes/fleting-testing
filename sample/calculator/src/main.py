@@ -1,25 +1,14 @@
 import flet as ft
+from calc import CalculatorApp
 
 
 def main(page: ft.Page):
-    counter = ft.Text("0", size=50, data=0)
+    page.title = "Calc App"
+    # create application instance
+    calc = CalculatorApp()
 
-    def increment_click(e):
-        counter.data += 1
-        counter.value = str(counter.data)
-
-    page.floating_action_button = ft.FloatingActionButton(
-        icon=ft.Icons.ADD, on_click=increment_click
-    )
-    page.add(
-        ft.SafeArea(
-            expand=True,
-            content=ft.Container(
-                content=counter,
-                alignment=ft.Alignment.CENTER,
-            ),
-        )
-    )
+    # add application's root control to the page
+    page.add(calc)
 
 
 ft.run(main)
