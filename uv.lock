@@ -40,15 +40,31 @@ wheels = [
 ]
 
 [[package]]
+name = "fleting"
+version = "1.1.4"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "flet" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/5a/72/8719ef5ca5716d124888fc34537a96f59e87b67b8efd67d2697900e0da6c/fleting-1.1.4.tar.gz", hash = "sha256:773610dce7d95091c60461230a23cab1dacb7dc2c78f735b97598b6a9c4f06a5", size = 9931 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ac/c2/a28459996fd4cb7e8f0723bb15762d72f8858036460ea2bc30504a285fba/fleting-1.1.4-py3-none-any.whl", hash = "sha256:322a5a46cddb2f81e2b6e3c8b9fbf49b1d2e32735c53e2b431d22a1afd65096f", size = 19372 },
+]
+
+[[package]]
 name = "fleting-testing"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "flet" },
+    { name = "fleting" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "flet", specifier = ">=0.80.1" }]
+requires-dist = [
+    { name = "flet", specifier = ">=0.80.1" },
+    { name = "fleting", specifier = ">=1.1.4" },
+]
 
 [[package]]
 name = "h11"
